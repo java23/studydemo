@@ -5,12 +5,12 @@ import com.itheima.edu.info.manager.service.StudentService;
 
 import java.util.Scanner;
 
-public class BaseStudentController {
+public abstract class BaseStudentController {
     private StudentService studentService = new StudentService();
     private Scanner scanner = new Scanner(System.in);
 
     //开启学生管理系统，并展示学生管理系统菜单
-    public void start() {
+    public final void start() {
         studentLoop:
         while (true) {
 
@@ -45,7 +45,7 @@ public class BaseStudentController {
         }
     }
 
-    private void updateStudent() {
+    public final void updateStudent() {
         // String updateId;
         //1.调用业务员获取学生对象数组
         Student[] students = studentService.findAllStudent();
@@ -86,7 +86,7 @@ public class BaseStudentController {
         System.out.println("修改成功");
     }
 
-    public void deleteStudentById() {
+    public final void deleteStudentById() {
 
         //1.调用业务员获取学生对象数组
         Student[] students = studentService.findAllStudent();
@@ -116,7 +116,7 @@ public class BaseStudentController {
 
     }
 
-    public void findAllStudent() {
+    public final  void findAllStudent() {
         //1.调用业务员获取学生对象数组
         Student[] students = studentService.findAllStudent();
         //2.判断是否有学生信息
@@ -136,7 +136,7 @@ public class BaseStudentController {
 
     }
 
-    public void addStudent() {
+    public final void addStudent() {
         //studentService = new StudentService();
         //1.键盘接收学生信息
         Scanner scanner = new Scanner(System.in);
@@ -176,7 +176,7 @@ public class BaseStudentController {
 
     }
 
-    public String inputStudentId() {
+    public final String inputStudentId() {
         String id;
         while (true) {
             //1.键盘录入要修改的学生ID
@@ -193,10 +193,7 @@ public class BaseStudentController {
         return id;
     }
 
-    public Student inputStudentInfo(String id) {
-//由子类去实现
-        return null;
-    }
+    public abstract Student inputStudentInfo(String id);
 
 }
 
