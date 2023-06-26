@@ -116,7 +116,7 @@ public abstract class BaseStudentController {
 
     }
 
-    public final  void findAllStudent() {
+    public final void findAllStudent() {
         //1.调用业务员获取学生对象数组
         Student[] students = studentService.findAllStudent();
         //2.判断是否有学生信息
@@ -194,6 +194,7 @@ public abstract class BaseStudentController {
     }
 
     public abstract Student inputStudentInfo(String id);
+
 
 }
 
