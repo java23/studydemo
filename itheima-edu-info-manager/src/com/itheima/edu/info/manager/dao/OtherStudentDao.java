@@ -4,7 +4,7 @@ import com.itheima.edu.info.manager.domain.Student;
 
 import java.util.ArrayList;
 
-public class OtherStudentDao {
+public class OtherStudentDao implements BaseStudentDao {
     //1.创建学生对象数组
     private static ArrayList<Student> students = new ArrayList<>();
     static{

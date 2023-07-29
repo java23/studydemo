@@ -2,9 +2,10 @@ package com.itheima.edu.info.manager.dao;
 
 import com.itheima.edu.info.manager.domain.Student;
 
-public class StudentDao {
+public class StudentDao implements BaseStudentDao {
     //1.创建学生对象数组
     private static Student[] students = new  Student[5];
+    @Override
     public boolean addStudent(Student stu) {
 
         //2.添加学生到数组
